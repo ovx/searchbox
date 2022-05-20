@@ -14,4 +14,4 @@ jobs:
         with:
           fail_on_unmatched_files: true
           files: |
-            dist/**/*.(js|css)
+            dist/*.{js,css}
