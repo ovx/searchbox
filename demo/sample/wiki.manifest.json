@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://en.wikipedia.org/wiki/",
+  "data": "wiki.index.json",
+  "fields": [
+    {
+      "name": "id",
+      "ref": true
+    },
+    {
+      "name": "title",
+      "boost": 10,
+      "suggestions": true
+    },
+    {
+      "name": "snippet"
+    },
+    {
+      "name": "link",
+      "search": false
+    }
+  ]
+}

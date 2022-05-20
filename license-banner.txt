@@ -1,0 +1,4 @@
+Searchbox - backend-less website search
+Version {version}
+Copyright (C) 2022 Privian.io (https://about.privian.io)
+@license MIT

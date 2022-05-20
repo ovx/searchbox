@@ -1,0 +1,29 @@
+{
+  "baseUrl": "https://nodejs.org/dist/latest-v16.x/docs/api/",
+  "data": "nodejs.index.json",
+  "fields": [
+    {
+      "name": "id"
+    },
+    {
+      "name": "boost"
+    },
+    {
+      "name": "title",
+      "boost": 10,
+      "suggestions": true
+    },
+    {
+      "name": "snippet"
+    },
+    {
+      "name": "category",
+      "boost": 10,
+      "suggestions": true
+    },
+    {
+      "name": "link",
+      "search": false
+    }
+  ]
+}
