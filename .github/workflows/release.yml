@@ -14,4 +14,6 @@ jobs:
         with:
           fail_on_unmatched_files: true
           files: |
-            dist/*.{js,css}
+            dist/searchbox.min.css
+            dist/searchbox.min.js
+            dist/searchbox.worker.min.js
