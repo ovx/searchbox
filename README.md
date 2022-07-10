@@ -53,8 +53,8 @@ Play with the [demo](https://privian.github.io/searchbox/demo/)
 Download a [release](https://github.com/privian/searchbox/releases) or use a CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/privian/searchbox@0.1.0/dist/searchbox.min.css" />
-<script defer src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.1.0/dist/searchbox.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/privian/searchbox@0.1.2/dist/searchbox.min.css" />
+<script defer src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.1.2/dist/searchbox.min.js"></script>
 ```
 
 ```js
