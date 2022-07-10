@@ -9,7 +9,12 @@ import {
 export class Searchbox {
   readonly workers: Map<string, SearchboxWorker> = new Map();
 
-  constructor(readonly workerScriptUrl: string) {}
+  constructor(readonly workerScriptUrl: string) {
+    // @ts-ignore
+    if (typeof workerScriptUrl !== 'string' && !!workerScriptUrl.target) {
+      throw new Error('Trying to create an instance of Searchbox class as component; Use SearchboxComponent instead.');
+    }
+  }
 
   destroyIndex(index: string) {
     try {

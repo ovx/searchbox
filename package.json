@@ -1,9 +1,9 @@
 {
   "name": "searchbox",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A backend-less website search built on top of lunr.js",
   "main": "dist/searchbox.min.js",
-  "author": "Privian.io; https://about.privian.io",
+  "author": "Daniel Regeci; https://about.privian.io",
   "license": "MIT",
   "files": [
     "dist"

@@ -16,7 +16,6 @@
   <a href="#create-manifest">Create Manifest</a> •
   <a href="#related">Related</a> •
   <a href="#credits">Credits</a> •
-  <a href="#sponsors">Sponsors</a> •
   <a href="#license">License</a>
 </p>
 
@@ -59,7 +58,7 @@ Download a [release](https://github.com/privian/searchbox/releases) or use a CDN
 ```
 
 ```js
-const searchbox = new Searchbox({
+const searchbox = new SearchboxComponent({
   target: document.body,
   props: {
     options: {
@@ -218,10 +217,6 @@ export interface IOptions {
 
 - Inspired by [mkdocs-material](https://github.com/squidfunk/mkdocs-material)'s search.
 - Built on top of [lunr.js](https://github.com/olivernn/lunr.js).
-
-## Sponsors
-
-This project is sponspored by [Privian.io](https://about.privian.io) - privacy-friendly, ad-free web search and analytics.
 
 ## License
 
