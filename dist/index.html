@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searchbox DEMO - Fast, backend-less search to any website.</title>
+
+    <style>
+      /* Demo page styling */
+      html {
+        font-family: sans-serif;
+      }
+      a {
+        color: blue;
+      }
+      #search {
+        margin: 4rem auto;
+        max-width: 25rem;
+      }
+      .search-input {
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 5px;
+        display: flex;
+        padding: 0.2rem 0.4rem;
+      }
+      .search-input > *:not(:last-child) {
+        margin-right: 5px;
+      }
+      .search-input input {
+        border: 0;
+        font-size: 100%;
+        outline: 0;
+        margin: 0;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .search-info {
+        margin: 0.5rem auto;
+        max-width: 25rem;
+        font-size: 80%;
+      }
+
+      .usage {
+        max-width: 32rem;
+        margin: 0 auto;
+      }
+      .usage pre code {
+        overflow: auto;
+      }
+
+      /* Searchbox customization */
+      .searchbox-dropdown {
+        border-radius: 5px;
+        box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.075);
+      }
+    </style>
+    <script type="module" crossorigin src="/searchbox.min.js"></script>
+    
+  </head>
+  <body>
+    <div id="search">
+      <div class="search-input">
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>
+        </div>
+        <input type="search" placeholder="Try demo..." />
+      </div>
+
+      <div class="search-info">
+        Try: <u>pagefind</u>, <u>search</u>, <u>indexing</u>, <u>multilingual</u>
+      </div>
+    </div>
+
+    <div class="usage">
+      <p><a href="https://github.com/privian/searchbox">Searchbox</a> is a UI component built on top of <a href="https://pagefind.app/">Pagefind</a> providing fast, backend-less search to any website.</p>
+      <p>To get started, please follow the <a href="https://pagefind.app/docs/#indexing-your-site">Pagefind's instructions</a> on building an index for your website.</p>
+      <h4>Usage</h4>
+
+      <pre>
+        <code id="htmlViewer" style="color:rgb(51, 51, 51); font-weight:400;background-color:rgb(248, 248, 248);background:rgb(248, 248, 248);display:block;padding: .5em;"><span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 1. Create your search input --&gt;</span>
+
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">div</span> <span style="color:rgb(51, 51, 51); font-weight:400;">id</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span>&gt;</span>
+  <span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">input</span> <span style="color:rgb(51, 51, 51); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span> /&gt;</span>
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">div</span>&gt;</span>
+
+<span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 2. Add searchbox.js --&gt;</span>
+
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span> <span style="color:rgb(51, 51, 51); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;module&quot;</span> <span style="color:rgb(51, 51, 51); font-weight:400;">src</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;/searchbox.min.js&quot;</span>&gt;</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span>
+
+<span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 3. Create Searchbox instance --&gt;</span>
+
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span><span style="color:rgb(51, 51, 51); font-weight:400;">
+<span style="color:rgb(51, 51, 51); font-weight:700;">const</span> searchbox = <span style="color:rgb(51, 51, 51); font-weight:700;">new</span> Searchbox({
+  <span style="color:rgb(51, 51, 51); font-weight:400;">props</span>: {
+    <span style="color:rgb(51, 51, 51); font-weight:400;">options</span>: {
+      <span style="color:rgb(51, 51, 51); font-weight:400;">pagefind</span>: <span style="color:rgb(221, 17, 68); font-weight:400;">&#x27;https://pagefind.app/_pagefind/pagefind.js&#x27;</span>,
+    },
+  },
+  <span style="color:rgb(51, 51, 51); font-weight:400;">target</span>: <span style="color:rgb(0, 134, 179); font-weight:400;">document</span>.querySelector(<span style="color:rgb(221, 17, 68); font-weight:400;">&#x27;#search&#x27;</span>)
+})
+</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span></code></pre>
+
+    </div>
+    
+  </body>
+</html>
