@@ -50,30 +50,29 @@ Download a [release](https://github.com/privian/searchbox/releases) or use a CDN
 1. Create `<input />` element:
 
 ```html
+<!-- 1. Create input element -->
 <div id="search">
   <input type="search" />
 </div>
-```
 
-2. Include Searchbox into your website:
-
-```html
+<!-- 2. Include Searchbox into your website -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.2.2/dist/searchbox.min.js"></script>
-```
 
-3. Configure Searchbox instance:
-
-```html
+<!-- 3. Configure Searchbox instance -->
 <script>
-const searchbox = new Searchbox({
-  props: {
-    options: {
-      // replace this with your Pagefind's build path
-      pagefind: '/_pagefind/pagefind.js',
+window.addEventListener('DOMContentLoaded', () => {
+  const searchbox = new Searchbox({
+    props: {
+      options: {
+        // Place your options here (see Configuration options below)
+        // ...
+        // Replace this with your Pagefind's build path
+        pagefind: '/_pagefind/pagefind.js',
+      },
     },
-  },
-  target: document.querySelector('#search')
-})
+    target: document.querySelector('#search')
+  });
+});
 </script>
 ```
 
