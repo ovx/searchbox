@@ -1,0 +1,201 @@
+:root {
+  --searchbox-border-color: rgb(219, 219, 219);
+  --searchbox-active-color: rgb(19, 58, 165);
+  --searchbox-active-bg-color: rgb(233, 238, 250);
+  --searchbox-muted-color: rgb(119, 119, 119);
+  --searchbox-muted-bg-color: rgb(247, 247, 247);
+  --searchbox-mark-bg: rgb(250, 248, 205);
+  --searchbox-spacer: 0.5rem;
+  --searchbox-spacer-lg: 1rem;
+}
+
+.searchbox {
+  &-results {
+    &-categories {
+      background-color: var(--searchbox-muted-bg-color);
+      border-bottom: 1px solid var(--searchbox-border-color);
+      font-size: 0.8rem;
+      padding: 0 var(--searchbox-spacer);
+
+      &-wrap {
+        overflow-y: visible;
+        overflow-x: auto;
+        margin: 0 0 -1px 0;
+      }
+
+      ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-right: var(--searchbox-spacer-lg);
+      }
+
+      a,
+      [role='button'] {
+        border-bottom: 1px solid transparent;
+        color: var(--searchbox-muted-color);
+        cursor: pointer;
+        display: inline-block;
+        padding: var(--searchbox-spacer) 0;
+        white-space: nowrap;
+
+        &.active {
+          border-bottom-color: var(--searchbox-active-color);
+          color: var(--searchbox-active-color);
+        }
+      }
+    }
+
+    &-items {
+      flex-grow: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      mark {
+        background-color: var(--searchbox-mark-bg);
+        color: currentColor;
+        padding: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        color: var(--searchbox-active-color);
+      }
+    }
+
+    &-header {
+      background-color: var(--searchbox-muted-bg-color);
+      border-bottom: 1px solid var(--searchbox-border-color);
+      padding: var(--searchbox-spacer);
+    }
+
+    &-footer {
+      background-color: var(--searchbox-muted-bg-color);
+      border-top: 1px solid var(--searchbox-border-color);
+      padding: var(--searchbox-spacer);
+    }
+
+    &:not(.compact) &-item:not(:last-child) {
+      border-bottom: 1px solid var(--searchbox-border-color);
+    }
+
+    &-text {
+      color: var(--searchbox-muted-color);
+      padding: var(--searchbox-spacer);
+    }
+
+    &-load-more {
+      color: var(--searchbox-muted-color);
+
+      button {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: currentColor;
+        cursor: pointer;
+        font-size: 0.8rem;
+        outline: none;
+        margin: 0;
+        padding: var(--searchbox-spacer);
+        width: 100%;
+      }
+    }
+
+    &-item:not(:last-child) {
+      border-bottom: 1px solid var(--searchbox-border-color);
+    }
+
+    &-link {
+      display: flex;
+      padding: var(--searchbox-spacer);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &.focus,
+      &:hover {
+        background-color: var(--searchbox-active-bg-color);
+      }
+    }
+
+    &-image {
+      color: var(--searchbox-muted-color);
+      margin-right: var(--searchbox-spacer);
+    }
+
+    &-excerpt {
+      color: var(--searchbox-muted-color);
+      font-size: 0.8rem;
+      margin-top: var(--searchbox-spacer);
+
+      code {
+        font-size: 0.8rem;
+      }
+
+			h1, h2, h3, h4, h5, h6 {
+				font-size: 0.8rem;
+			}
+
+      p {
+        margin-top: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-expand {
+      background-color: var(--searchbox-muted-bg-color);
+      color: var(--searchbox-active-color);
+
+      button {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: currentColor;
+        cursor: pointer;
+        font-size: 0.8rem;
+        outline: none;
+        margin: 0;
+        padding: var(--searchbox-spacer);
+      }
+    }
+
+    &-item-expanded &-expand {
+      color: var(--searchbox-muted-color);
+    }
+
+    &-label {
+      border: 1px solid var(--searchbox-border-color);
+      border-radius: 1rem;
+      color: var(--searchbox-muted-color);
+      font-size: 0.8rem;
+      margin-left: var(--searchbox-spacer);
+      padding: 2px 6px;
+    }
+  }
+
+  &-dropdown {
+    background: white;
+    border: 1px solid var(--searchbox-border-color);
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    transition: height 0.3s;
+    z-index: 10000;
+  }
+}
