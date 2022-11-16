@@ -1,7 +1,7 @@
 {
   "name": "searchbox",
   "description": "A backend-less website search built on top of Pagefind.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "main": "dist/searchbox.min.js",
   "author": "Daniel Regeci; https://about.privian.io",

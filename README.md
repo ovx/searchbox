@@ -58,7 +58,7 @@ Download a [release](https://github.com/privian/searchbox/releases) or use a CDN
 2. Include Searchbox into your website:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.2.1/dist/searchbox.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.2.2/dist/searchbox.min.js"></script>
 ```
 
 3. Configure Searchbox instance:
