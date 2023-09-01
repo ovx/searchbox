@@ -8,7 +8,7 @@ const searchbox = new Searchbox({
 			category: 'section',
 			pagefind: 'https://pagefind.app/_pagefind/pagefind.js',
 			renderers: {
-				footer: () => `<div class="footer"><a href="https://github.com/privian/searchbox">Powered by Searchbox</a></div>`,
+				footer: () => `<div class="footer"><a href="https://github.com/bausw-com/searchbox">Powered by Searchbox</a></div>`,
 			},
 			groupBy: 'title',
 		},

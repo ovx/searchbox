@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/privian/searchbox/master/assets/searchbox.svg" alt="Searchbox" width="200">
+  <img src="https://raw.githubusercontent.com/bausw-com/searchbox/master/assets/searchbox.svg" alt="Searchbox" width="200">
   <br>
   Searchbox
   <br>
@@ -30,12 +30,12 @@ Searchbox is an UI component built on top of Pagefind providing fast, backend-le
 It is an open-source alternative to Algolia for small websites, blogs and documentation pages.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/privian/searchbox/master/assets/screenshot.png" alt="Searchbox" height="250">
+  <img src="https://raw.githubusercontent.com/bausw-com/searchbox/master/assets/screenshot.png" alt="Searchbox" height="250">
 </div>
 
 ## Demo
 
-Play with the [demo](https://privian.github.io/searchbox/demo.html)
+Play with the [demo](https://bausw-com.github.io/searchbox/demo.html)
 
 ## Features
 
@@ -45,7 +45,7 @@ Play with the [demo](https://privian.github.io/searchbox/demo.html)
 
 ## Usage
 
-Download a [release](https://github.com/privian/searchbox/releases) or use a CDN:
+Download a [release](https://github.com/bausw-com/searchbox/releases) or use a CDN:
 
 1. Create `<input />` element:
 
@@ -56,7 +56,7 @@ Download a [release](https://github.com/privian/searchbox/releases) or use a CDN
 </div>
 
 <!-- 2. Include Searchbox into your website -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/privian/searchbox@0.2.2/dist/searchbox.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox@0.2.4/dist/searchbox.min.js"></script>
 
 <!-- 3. Configure Searchbox instance -->
 <script>
@@ -173,6 +173,10 @@ export interface IOptions {
 ## Credits
 
 - [Pagefind](https://pagefind.app/) - A fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure
+
+## Sponspor
+
+This project is sponsored by [BAUSW](https://bausw.com) - no-code business apps for the construction industry.
 
 ## License
 

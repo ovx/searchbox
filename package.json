@@ -1,18 +1,18 @@
 {
   "name": "searchbox",
   "description": "A backend-less website search built on top of Pagefind.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "main": "dist/searchbox.min.js",
-  "author": "Daniel Regeci; https://about.privian.io",
+  "author": "Daniel Regeci; BAU Software s.r.o.; https://bausw.com",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/privian/searchbox",
+  "homepage": "https://github.com/bausw-com/searchbox",
   "repository": {
     "type": "git",
-    "url": "https://github.com/privian/searchbox"
+    "url": "https://github.com/bausw-com/searchbox"
   },
   "keywords": [
     "search",
@@ -33,15 +33,15 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.1.0",
-    "@tsconfig/svelte": "^3.0.0",
-    "sass": "^1.55.0",
-    "svelte": "^3.52.0",
-    "svelte-check": "^2.9.2",
-    "svelte-preprocess": "^4.10.7",
-    "tslib": "^2.4.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.2.0",
-    "vite-plugin-css-injected-by-js": "^2.1.1"
+    "@sveltejs/vite-plugin-svelte": "^2.4.5",
+    "@tsconfig/svelte": "^4.0.1",
+    "sass": "^1.66.1",
+    "svelte": "^4.2.0",
+    "svelte-check": "^3.5.1",
+    "svelte-preprocess": "^5.0.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-css-injected-by-js": "^3.3.0"
   }
 }
