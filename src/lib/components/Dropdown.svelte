@@ -1,21 +1,27 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	export let align: 'left' | 'right' = 'left';
-	export let anchor: HTMLElement;
+	export let anchor: string | null = null;
 	export let offset: [ number, number ] = [ 0, -1 ];
 	export let animationDuration: number = 350;
+	export let input: HTMLInputElement;
 	export let pageOffset: number = 20;
-	export let width: number = null;
+	export let width: string | null = null;
 
 	let el: HTMLElement;
+	let elAnchor: HTMLElement;
 
 	$: computedStyles = el && getComputedStyle(el);
 
 	onDestroy(() => {
-		if (anchor) {
-			anchor.classList.remove('searchbox-dropdown-visible');
+		if (elAnchor) {
+			elAnchor.classList.remove('searchbox-dropdown-visible');
 		}
+	});
+
+	onMount(() => {
+		elAnchor = anchor ? document.querySelector(anchor) : input;
 	});
 
 	function onMouseDown(ev: MouseEvent) {
@@ -26,13 +32,13 @@
 	}
 
 	export function position() {
-		if (anchor && el) {
-			const boundry = anchor.getBoundingClientRect();
+		if (elAnchor && el) {
+			const boundry = elAnchor.getBoundingClientRect();
 			const docHeight = document.documentElement.clientHeight;
 			const docWidth = document.documentElement.clientWidth;
 			const borderSize = parseInt(computedStyles.borderTopWidth, 10) + parseInt(computedStyles.borderBottomWidth, 10);
 			const maxHeight = Math.min(docHeight - (pageOffset * 2), docHeight - pageOffset - boundry.bottom);
-			el.style.width = `${width || boundry.width}px`;
+			el.style.width = `${width || (boundry.width + 'px')}`;
 			el.style.top = `${boundry.bottom + offset[1]}px`;
 			if (align === 'right') {
 				el.style.left = `auto`;
@@ -49,7 +55,7 @@
 				return acc;
 			}, borderSize);
 			el.style.height = `${Math.min(maxHeight, height)}px`;
-			anchor.classList.add('searchbox-dropdown-visible');
+			elAnchor.classList.add('searchbox-dropdown-visible');
 			setTimeout(() => {
 				if (el) {
 					el.style.height = `auto`;
@@ -59,6 +65,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div bind:this={el} class="searchbox-dropdown" on:mousedown={onMouseDown}>
 	<slot></slot>
 </div>

@@ -27,6 +27,9 @@
       .search-input > *:not(:last-child) {
         margin-right: 5px;
       }
+      .search-input .search-box {
+        width: 100%;
+      }
       .search-input input {
         border: 0;
         font-size: 100%;
@@ -60,6 +63,7 @@
         box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.075);
       }
     </style>
+
   </head>
   <body>
     <div id="search">
@@ -67,7 +71,17 @@
         <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>
         </div>
-        <input type="search" placeholder="Try demo..." />
+
+        <search-box
+          id="searchbox"
+          anchor="#search .search-input"
+          category="section"
+          groupBy="title"
+          class="search-box"
+          pagefind="https://pagefind.app/_pagefind/pagefind.js"
+        >
+          <input type="search" placeholder="Try demo..." />
+        </search-box>
       </div>
 
       <div class="search-info">
@@ -81,30 +95,22 @@
       <h4>Usage</h4>
 
       <pre>
-        <code id="htmlViewer" style="color:rgb(51, 51, 51); font-weight:400;background-color:rgb(248, 248, 248);background:rgb(248, 248, 248);display:block;padding: .5em;"><span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 1. Create input element --&gt;</span>
-<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">div</span> <span style="color:rgb(51, 51, 51); font-weight:400;">id</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span>&gt;</span>
-  <span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">input</span> <span style="color:rgb(51, 51, 51); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span> /&gt;</span>
-<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">div</span>&gt;</span>
+        <code id="htmlViewer" style="color:rgb(51, 51, 51); font-weight:400;background-color:rgb(248, 248, 248);background:rgb(248, 248, 248);display:block;padding: .5em;"><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span> <span style="color:rgb(0, 128, 128); font-weight:400;">async</span> <span style="color:rgb(0, 128, 128); font-weight:400;">defer</span> <span style="color:rgb(0, 128, 128); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;module&quot;</span> <span style="color:rgb(0, 128, 128); font-weight:400;">src</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.js&quot;</span>&gt;</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span>
 
-<span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 2. Include Searchbox into your website --&gt;</span>
-<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span> <span style="color:rgb(51, 51, 51); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;module&quot;</span> <span style="color:rgb(51, 51, 51); font-weight:400;">src</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://cdn.jsdelivr.net/gh/bausw-com/searchbox@0.2.4/dist/searchbox.min.js&quot;</span>&gt;</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span>
-
-<span style="color:rgb(153, 153, 136); font-weight:400;">&lt;!-- 3. Configure Searchbox instance --&gt;</span>
-<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span><span style="color:rgb(51, 51, 51); font-weight:400;">
-<span style="color:rgb(0, 134, 179); font-weight:400;">window</span>.addEventListener(<span style="color:rgb(221, 17, 68); font-weight:400;">&#x27;DOMContentLoaded&#x27;</span>, <span style="color:rgb(51, 51, 51); font-weight:400;">() =&gt;</span> {
-  <span style="color:rgb(51, 51, 51); font-weight:700;">const</span> searchbox = <span style="color:rgb(51, 51, 51); font-weight:700;">new</span> Searchbox({
-    <span style="color:rgb(51, 51, 51); font-weight:400;">props</span>: {
-      <span style="color:rgb(51, 51, 51); font-weight:400;">options</span>: {
-        <span style="color:rgb(153, 153, 136); font-weight:400;">// Replace this with your Pagefind&#x27;s build path</span>
-        <span style="color:rgb(51, 51, 51); font-weight:400;">pagefind</span>: <span style="color:rgb(221, 17, 68); font-weight:400;">&#x27;/_pagefind/pagefind.js&#x27;</span>,
-      },
-    },
-    <span style="color:rgb(51, 51, 51); font-weight:400;">target</span>: <span style="color:rgb(0, 134, 179); font-weight:400;">document</span>.querySelector(<span style="color:rgb(221, 17, 68); font-weight:400;">&#x27;#search&#x27;</span>)
-  });
-});
-</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span></code></pre>
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">search-box</span> <span style="color:rgb(0, 128, 128); font-weight:400;">pagefind</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://pagefind.app/_pagefind/pagefind.js&quot;</span>&gt;</span>
+  <span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">input</span> <span style="color:rgb(0, 128, 128); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span> <span style="color:rgb(0, 128, 128); font-weight:400;">placeholder</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;Search...&quot;</span> /&gt;</span>
+<span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">search-box</span>&gt;</span></code></pre>
 
     </div>
-    <script type="module" src="/src/demo.ts"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('#searchbox').renderers = {
+				  footer: () => `<div class="footer"><a href="https://github.com/bausw-com/searchbox">Powered by Searchbox</a></div>`,
+        };
+      });
+    </script>
+
+    <script async defer type="module" src="/src/main.ts"></script>
   </body>
 </html>

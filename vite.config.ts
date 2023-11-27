@@ -1,16 +1,23 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte(), cssInjectedByJsPlugin()],
+  plugins: [
+    svelte({
+      compilerOptions: {
+        customElement: true,
+      },
+    }),
+  ],
   build: {
-    rollupOptions: {
-      input: ['src/main.ts'],
-      output: {
-        entryFileNames: `searchbox.min.js`,
-      }
+    target: "modules",
+    lib: {
+      entry: "src/main.ts",
+      name: "altcha",
+      formats: ["iife", "es", "umd"],
     },
-  }
-})
+    minify: "esbuild",
+    rollupOptions: {},
+  },
+});

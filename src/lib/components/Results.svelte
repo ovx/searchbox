@@ -132,11 +132,13 @@
 			{#if categories.length > 2}
 			<li>
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-interactive-supports-focus -->
 				<span role="button" class:active={category === '*'} on:click={() => onCategoryClick('*')}>{i18n.all}</span>
 			</li>
 			{/if}
 			{#each categories.slice(1) as cat}
 			<li>
+				<!-- svelte-ignore a11y-interactive-supports-focus -->
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<span role="button" class:active={category === cat} on:click={() => onCategoryClick(cat)}>{cat}</span>
 			</li>

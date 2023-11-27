@@ -39,7 +39,7 @@ Play with the [demo](https://bausw-com.github.io/searchbox/demo.html)
 
 ## Features
 
-- Backend-less, runs in the browser from pre-built index (see [Pagefind](https://pagefind.app/))
+- Backend-less, runs in the browser from a pre-built index (see [Pagefind](https://pagefind.app/))
 - Ideal for small websites, documentation pages and blogs
 - Highly customizable
 
@@ -47,136 +47,115 @@ Play with the [demo](https://bausw-com.github.io/searchbox/demo.html)
 
 Download a [release](https://github.com/bausw-com/searchbox/releases) or use a CDN:
 
-1. Create `<input />` element:
-
 ```html
-<!-- 1. Create input element -->
-<div id="search">
-  <input type="search" />
-</div>
+<!-- 1. Include the script -->
+<script async defer type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.min.js"></script>
 
-<!-- 2. Include Searchbox into your website -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox@0.2.4/dist/searchbox.min.js"></script>
-
-<!-- 3. Configure Searchbox instance -->
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const searchbox = new Searchbox({
-    props: {
-      options: {
-        // Place your options here (see Configuration options below)
-        // ...
-        // Replace this with your Pagefind's build path
-        pagefind: '/_pagefind/pagefind.js',
-      },
-    },
-    target: document.querySelector('#search')
-  });
-});
-</script>
+<!-- 2. use <search-box> tag around your search input -->
+<search-box pagefind="https://pagefind.app/_pagefind/pagefind.js">
+  <input type="search" placeholder="Search..." />
+</search-box>
 ```
 
 ## Configuration options
 
 ```ts
-export interface IOptions {
-  /**
-   * Dropdown alignment relative to the `anchor`.
-   */
-  align?: 'left' | 'right';
+/**
+ * Dropdown alignment relative to the `anchor`.
+ */
+export let align: 'left' | 'right' | undefined = undefined;
 
-  /**
-   * Dropdown anchor element for positioning and alignment. If not specified, the `input` will be used.
-   */
-  anchor?: HTMLElement;
+/**
+ * Dropdown anchor element for positioning and alignment. If not specified, the `input` will be used.
+ */
+export let anchor: string | undefined = undefined;
 
-  /**
-   * The name of the Pagefind's "filter" property to be used as a category for grouping results. Use one of the properties returned by `pagefind.filters();`.
-   * https://pagefind.app/docs/api/#filtering
-  */
-  category?: string;
+/**
+ * The name of the Pagefind's "filter" property to be used as a category for grouping results. Use one of the properties returned by `pagefind.filters();`.
+ * https://pagefind.app/docs/api/#filtering
+*/
+export let category: string | undefined = undefined;
 
-  /**
-   * A custom search function. Can be used to request external API.
-   */
-  customSearch?: (term: string, suggestions: boolean) => Promise<IResult>;
+/**
+ * A custom search function. Can be used to request external API.
+ */
+export let customSearch: ((term: string, suggestions: boolean) => Promise<IResult>) | undefined = undefined;
 
-  /**
-   * A custom delay (in milliseconds) between the input focus and when the dropdown is shown.
-   */
-  dropdownDelay?: number;
+/**
+ * A custom delay (in milliseconds) between the input focus and when the dropdown is shown.
+ */
+export let dropdownDelay: number | undefined = undefined;
 
-  /**
-   * Grouping function or a parameter name. The function should return group identifier as string.
-   */
-  groupBy?: string | ((doc: IResultItemDoc) => string);
+/**
+ * Grouping function or a parameter name. The function should return group identifier as string.
+ */
+export let groupBy: string | ((doc: IResultItemDoc) => string) | undefined = undefined;
 
-  /**
-   * Pagefind filters
-   * https://pagefind.app/docs/api/#filtering
-   */
-  filters?: Record<string, any>;
+/**
+ * Pagefind filters
+ * https://pagefind.app/docs/api/#filtering
+ */
+export let filters: Record<string, any> | undefined = undefined;
 
-  /**
-   * The name of the "meta" property to be used as an image in the search results (typically, this would be "image").
-  */
-  image?: string;
+/**
+ * The name of the "meta" property to be used as an image in the search results (typically, this would be "image").
+*/
+export let image: string | undefined = undefined;
 
-  /**
-   * Max. number of results to return (default: 100)
-   */
-  limit?: number;
+/**
+ * Max. number of results to return (default: 100)
+ */
+export let limit: number = 100;
 
-  /**
-   * Path to `pagefind.js` script
-   */
-  pagefind: string;
+/**
+ * Path to `pagefind.js` script
+ */
+export let pagefind: string;
 
-  /**
-   * A custom HTML element where the results will be rendered instead of the dropdown. Is specified, the dropdown won't be shown.
-   */
-  results?: HTMLElement;
+/**
+ * Custom renderer functions. Supported functions: `header`, `footer`, `item`.
+ */
+export let renderers: IRenderers | undefined = undefined;
 
-  /**
-   * Custom renderer functions. Supported functions: `header`, `footer`, `item`.
-   */
-  renderers?: IRenderers;
+/**
+ * A custom HTML element where the results will be rendered instead of the dropdown. Is specified, the dropdown won't be shown.
+ */
+export let results: string | undefined = undefined;
 
-  /**
-   * Pagefind sorting
-   * https://pagefind.app/docs/api/#sorting-results
-   */
-  sort?: Record<string, 'asc' | 'desc'>;
+/**
+ * Pagefind sorting
+ * https://pagefind.app/docs/api/#sorting-results
+ */
+export let sort: Record<string, 'asc' | 'desc'> | undefined = undefined;
 
-  /**
-   * I18n strings override. See `src/strings.ts`.
-   */
-  strings?: Record<string, string>;
+/**
+ * I18n strings override. See `src/strings.ts`.
+ */
+export let strings: Record<string, string> | undefined = undefined;
 
-  /**
-   * Whether to use suggestions
-   */
-  suggestions?: boolean;
+/**
+ * Whether to use suggestions
+ */
+export let suggestions: boolean = false;
 
-  /**
-   * A custom function that transforms the result (each item).
-   */
-  transform?: TTransformFunc;
+/**
+ * A custom function that transforms the result (each item).
+ */
+export let transform: TTransformFunc | undefined = undefined;
 
-  /**
-   * Dropdown width (default: 100%)
-   */
-  width?: number;
-}
+/**
+ * Dropdown width (default: 100%)
+ */
+export let width: string | undefined = undefined;
 ```
 
 ## Credits
 
 - [Pagefind](https://pagefind.app/) - A fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure
 
-## Sponspor
+## Sponsor
 
-This project is sponsored by [BAUSW](https://bausw.com) - no-code business apps for the construction industry.
+This project is sponsored by [BAUSW](https://bausw.com "Construction site diary and other digital solutions for engineers.") - Construction site diary and other digital solutions for engineers.
 
 ## License
 

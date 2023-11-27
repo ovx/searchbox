@@ -14,4 +14,6 @@ jobs:
         with:
           fail_on_unmatched_files: true
           files: |
-            dist/searchbox.min.js
+            dist/searchbox.iife.js
+            dist/searchbox.js
+            dist/searchbox.umd.cjs
