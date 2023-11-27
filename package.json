@@ -1,7 +1,7 @@
 {
   "name": "searchbox",
   "description": "A backend-less website search built on top of Pagefind.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "main": "dist/searchbox.js",
   "module": "dist/searchbox.js",

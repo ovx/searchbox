@@ -49,7 +49,7 @@ Download a [release](https://github.com/bausw-com/searchbox/releases) or use a C
 
 ```html
 <!-- 1. Include the script -->
-<script async defer type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.min.js"></script>
+<script async defer type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.js"></script>
 
 <!-- 2. use <search-box> tag around your search input -->
 <search-box pagefind="https://pagefind.app/_pagefind/pagefind.js">

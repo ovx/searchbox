@@ -138,9 +138,13 @@
 
 	onMount(() => {
 		if (pagefind) {
-			import(/* @vite-ignore */pagefind).then((pf) => {
+			let url = pagefind;
+			if (url.startsWith('/')) {
+				url = location.origin + url;
+			}
+			import(/* @vite-ignore */url).then((pf) => {
 				if (!pf || typeof pf.search !== 'function') {
-					throw new Error(`Imported module ${pagefind} is not a recognizable Pagefind module.`);
+					throw new Error(`Imported module ${url} is not a recognizable Pagefind module.`);
 				}
 				pagefindInstance = pf;
 			}).catch((err) => {
