@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/bausw-com/searchbox/master/assets/searchbox.svg" alt="Searchbox" width="200">
+  <img src="https://raw.githubusercontent.com/ovx/searchbox/master/assets/searchbox.svg" alt="Searchbox" width="200">
   <br>
   Searchbox
   <br>
@@ -30,12 +30,12 @@ Searchbox is an UI component built on top of Pagefind providing fast, backend-le
 It is an open-source alternative to Algolia for small websites, blogs and documentation pages.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/bausw-com/searchbox/master/assets/screenshot.png" alt="Searchbox" height="250">
+  <img src="https://raw.githubusercontent.com/ovx/searchbox/master/assets/screenshot.png" alt="Searchbox" height="250">
 </div>
 
 ## Demo
 
-Play with the [demo](https://bausw-com.github.io/searchbox/demo.html)
+Play with the [demo](https://ovx.github.io/searchbox/demo.html)
 
 ## Features
 
@@ -45,11 +45,11 @@ Play with the [demo](https://bausw-com.github.io/searchbox/demo.html)
 
 ## Usage
 
-Download a [release](https://github.com/bausw-com/searchbox/releases) or use a CDN:
+Download a [release](https://github.com/ovx/searchbox/releases) or use a CDN:
 
 ```html
 <!-- 1. Include the script -->
-<script async defer type="module" src="https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.js"></script>
+<script async defer type="module" src="https://cdn.jsdelivr.net/gh/ovx/searchbox/dist/searchbox.js"></script>
 
 <!-- 2. use <search-box> tag around your search input -->
 <search-box pagefind="https://pagefind.app/_pagefind/pagefind.js">

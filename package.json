@@ -5,15 +5,15 @@
   "type": "module",
   "main": "dist/searchbox.js",
   "module": "dist/searchbox.js",
-  "author": "Daniel Regeci; BAU Software s.r.o.; https://bausw.com",
+  "author": "Daniel Regeci",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/bausw-com/searchbox",
+  "homepage": "https://github.com/ovx/searchbox",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bausw-com/searchbox"
+    "url": "https://github.com/ovx/searchbox"
   },
   "keywords": [
     "search",

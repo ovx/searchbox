@@ -90,12 +90,12 @@
     </div>
 
     <div class="usage">
-      <p><a href="https://github.com/bausw-com/searchbox">Searchbox</a> is a UI component built on top of <a href="https://pagefind.app/">Pagefind</a> providing fast, backend-less search to any website.</p>
+      <p><a href="https://github.com/ovx/searchbox">Searchbox</a> is a UI component built on top of <a href="https://pagefind.app/">Pagefind</a> providing fast, backend-less search to any website.</p>
       <p>To get started, please follow the <a href="https://pagefind.app/docs/#indexing-your-site">Pagefind's instructions</a> on building an index for your website.</p>
       <h4>Usage</h4>
 
       <pre>
-        <code id="htmlViewer" style="color:rgb(51, 51, 51); font-weight:400;background-color:rgb(248, 248, 248);background:rgb(248, 248, 248);display:block;padding: .5em;"><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span> <span style="color:rgb(0, 128, 128); font-weight:400;">async</span> <span style="color:rgb(0, 128, 128); font-weight:400;">defer</span> <span style="color:rgb(0, 128, 128); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;module&quot;</span> <span style="color:rgb(0, 128, 128); font-weight:400;">src</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://cdn.jsdelivr.net/gh/bausw-com/searchbox/dist/searchbox.js&quot;</span>&gt;</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span>
+        <code id="htmlViewer" style="color:rgb(51, 51, 51); font-weight:400;background-color:rgb(248, 248, 248);background:rgb(248, 248, 248);display:block;padding: .5em;"><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">script</span> <span style="color:rgb(0, 128, 128); font-weight:400;">async</span> <span style="color:rgb(0, 128, 128); font-weight:400;">defer</span> <span style="color:rgb(0, 128, 128); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;module&quot;</span> <span style="color:rgb(0, 128, 128); font-weight:400;">src</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://cdn.jsdelivr.net/gh/ovx/searchbox/dist/searchbox.js&quot;</span>&gt;</span><span style="color:rgb(0, 0, 128); font-weight:400;">&lt;/<span style="color:rgb(0, 0, 128); font-weight:400;">script</span>&gt;</span>
 
 <span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">search-box</span> <span style="color:rgb(0, 128, 128); font-weight:400;">pagefind</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;https://pagefind.app/_pagefind/pagefind.js&quot;</span>&gt;</span>
   <span style="color:rgb(0, 0, 128); font-weight:400;">&lt;<span style="color:rgb(0, 0, 128); font-weight:400;">input</span> <span style="color:rgb(0, 128, 128); font-weight:400;">type</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;search&quot;</span> <span style="color:rgb(0, 128, 128); font-weight:400;">placeholder</span>=<span style="color:rgb(221, 17, 68); font-weight:400;">&quot;Search...&quot;</span> /&gt;</span>
@@ -106,7 +106,7 @@
     <script>
       window.addEventListener('load', () => {
         document.querySelector('#searchbox').renderers = {
-				  footer: () => `<div class="footer"><a href="https://github.com/bausw-com/searchbox">Powered by Searchbox</a></div>`,
+				  footer: () => `<div class="footer"><a href="https://github.com/ovx/searchbox">Powered by Searchbox</a></div>`,
         };
       });
     </script>
